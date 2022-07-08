@@ -66,9 +66,35 @@ hist(saveBank)
 
 ## Question 1 Deviation and 95% confidence Interval
 ```{r}
+numClass = 45
+#ny guess at fair odds = $2:$1
+odds = 2
+counttoDo = 637
 
+saveBank = vector('numeric')
+
+for(k in 1:40){
+  bank = (BrLw(numClass,odds,countoDo))
+  saveBank[k] = bank
+}
+
+print(mean(saveBank))
+hist(saveBank)
 ```
 
+```{r}
+saveBank
+LCL = mean(saveBank) - 2*sd(saveBank)
+UCL = mean(saveBank) + 2*sd(saveBank)
+print(LCL)
+print(UCL)
+```
+```{r}
+sd(saveBank)
+```
+
+
+When 40 Dr.Brownlow substitutes try this, the average mean is $530 in profit. The confidence interval is between -87 and 111. The Standard deviation is 20.35138.
 
   
 <!--Explain and display your method of coming up with a 95% confidence interval of  professor Brownlows winnings (or losings)-->
